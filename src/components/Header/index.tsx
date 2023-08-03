@@ -21,20 +21,15 @@ export function Header() {
   return (
     <header
       className={`fixed z-50 w-full shadow-xl backdrop-blur transition-all top-0 py-3 ${
-        y > 0 ? 'bg-black/70' : 'bg-black'
+        y > 0 ? 'bg-white/70' : 'bg-zinc-100'
       } `}
     >
       {/* {y > 0 ? null : <TopBar />} */}
 
-      <Container>
+      <div className='px-10'>
         <div className="flex items-center justify-between">
           <Link href="/">
-            <img
-              src="/img/logo.png"
-              alt=""
-              className="py-3 transition-all cursor-pointer"
-              style={{ height: y > 0 ? '3rem' : '4rem' }}
-            />
+            <strong className='text-xl '>PCSUFPA</strong>
           </Link>
           <div className="md:flex gap-5 items-center hidden">
             <NavLinks />
@@ -46,7 +41,7 @@ export function Header() {
             <Icon icon="mdi:menu" className="text-white text-3xl" />
           </div>
         </div>
-      </Container>
+      </div>
     </header>
   )
 }
