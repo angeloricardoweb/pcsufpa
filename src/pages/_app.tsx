@@ -52,7 +52,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
               <div className="grid grid-cols-5 mt-20">
                 <div className="col-span-3 border-r border-zinc-100 pr-5">
                   <InnerHeader />
-                  <div>
+                  <div className='mt-5'>
                     <Component {...pageProps} />
                   </div>
                 </div>

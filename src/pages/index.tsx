@@ -10,35 +10,45 @@ const Home: NextPage = () => {
 
   console.log(posts)
 
+  if (isLoading)
+    return (
+      <div>
+        <ResumePostSkeleton />
+        <ResumePostSkeleton />
+        <ResumePostSkeleton />
+        <ResumePostSkeleton />
+        <ResumePostSkeleton />
+      </div>
+    )
+
   return (
-    <div className="py-5">
-      {isLoading && (
-        <div>
-          <ResumePostSkeleton />
-          <ResumePostSkeleton />
-          <ResumePostSkeleton />
-          <ResumePostSkeleton />
-          <ResumePostSkeleton />
-        </div>
-      )}
-      <div className="hover mb-2 cursor-pointer group">
-        <small>Angelo Ricardo - 3 de Agosto de 2023</small>
-        <div>
-          <div className="grid grid-cols-6 gap-2">
-            <div className="col-span-4">
-              <h2 className="text-2xl font-bold group-hover:text-blue-900 transition-all">
-                Understanding Server Components in React 18 and Next.js 13{' '}
-              </h2>
-              <p className="font-light">
-                With the release of Next.js 13, they have a new /app directory
-                that has newer approaches to data rendering, fetching, and also
-                ...
-              </p>
+    <div>
+      {posts?.map((post) => (
+        <div className="hover mb-2 cursor-pointer group" key={post.id}>
+          <div>
+            <div className="grid grid-cols-6 gap-2 items-center">
+              <div className="col-span-4">
+                <small>
+                  {post.data.autor} -{' '}
+                  {new Intl.DateTimeFormat('pt-BR', {
+                    dateStyle: 'medium',
+                  }).format(new Date(post.last_publication_date))}
+                </small>
+                <h2 className="text-2xl font-bold group-hover:text-blue-900 transition-all">
+                  {post.data.titulo}
+                </h2>
+                <p className="font-light">{post.data.resumo}...</p>
+              </div>
+              <div
+                className="col-span-2 bg-cover bg-center w-full aspect-[7/5]"
+                style={{
+                  backgroundImage: `url(${post.data.thumbnail.url})`,
+                }}
+              />
             </div>
           </div>
-          <div className="col-span-2"></div>
         </div>
-      </div>
+      ))}
     </div>
   )
 }
