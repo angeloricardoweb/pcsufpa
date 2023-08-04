@@ -3,11 +3,6 @@ import { client } from '../services/prismicClient'
 import useSWR from 'swr'
 
 const Page: NextPage = () => {
-  const { data: posts, isLoading } = useSWR('post_all', () =>
-    client.getAllByType('post')
-  )
-
-  console.log(posts)
 
   return (
     <div className="py-5">
