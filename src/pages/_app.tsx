@@ -15,6 +15,7 @@ import '../styles/index.scss'
 import { useEffect, useState } from 'react'
 import Container from '../components/Partials/Container'
 import { InnerHeader } from '../components/Partials/InnerHeader'
+import { Sidebar } from '../components/Partials/Sidebar'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -49,14 +50,14 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           <Header />
           <main className="min-h-[70vh]">
             <Container>
-              <div className="grid grid-cols-5 mt-20">
-                <div className="col-span-3 border-r border-zinc-100 pr-5">
+              <div className="grid grid-cols-6 mt-20">
+                <div className="col-span-4 border-r border-zinc-200 pr-5">
                   <InnerHeader />
-                  <div className='mt-5'>
+                  <div className="mt-5">
                     <Component {...pageProps} />
                   </div>
                 </div>
-                <aside className="col-span-2">Sidebar</aside>
+                <Sidebar />
               </div>
             </Container>
           </main>
