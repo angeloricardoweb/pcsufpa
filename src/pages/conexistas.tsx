@@ -11,7 +11,7 @@ const Page: NextPage = () => {
 
   return (
     <div className="py-5">
-      <div className="hover mb-2 cursor-pointer group">Sobre nós</div>
+      <div className="hover mb-2 cursor-pointer group">Conexistas</div>
     </div>
   )
 }

@@ -5,6 +5,20 @@
   "status": true,
   "json": {
     "Main": {
+      "autor": {
+        "type": "Text",
+        "config": {
+          "label": "Autor",
+          "placeholder": ""
+        }
+      },
+      "titulo": {
+        "type": "Text",
+        "config": {
+          "label": "Título",
+          "placeholder": ""
+        }
+      },
       "thumbnail": {
         "type": "Image",
         "config": {
@@ -37,7 +51,7 @@
           "label": "Conteúdo",
           "placeholder": "",
           "allowTargetBlank": true,
-          "multi": "paragraph,heading2,heading3,strong,em,hyperlink,image,list-item,o-list-item"
+          "multi": "paragraph,heading2,heading3,strong,em,hyperlink,image,list-item,o-list-item,embed,heading4"
         }
       },
       "categoria": {

@@ -6,126 +6,87 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
-/** Content for Banners da Home documents */
-interface BannersDaHomeDocumentData {
+/** Content for Conexistas documents */
+interface ConexistasDocumentData {
     /**
-     * Banners field in *Banners da Home*
+     * Conexista field in *Conexistas*
      *
      * - **Field Type**: Group
      * - **Placeholder**: *None*
-     * - **API ID Path**: banners_da_home.banners[]
+     * - **API ID Path**: conexistas.conexista[]
      * - **Tab**: Main
      * - **Documentation**: https://prismic.io/docs/core-concepts/group
      *
      */
-    banners: prismicT.GroupField<Simplify<BannersDaHomeDocumentDataBannersItem>>;
+    conexista: prismicT.GroupField<Simplify<ConexistasDocumentDataConexistaItem>>;
 }
 /**
- * Item in Banners da Home → Banners
+ * Item in Conexistas → Conexista
  *
  */
-export interface BannersDaHomeDocumentDataBannersItem {
+export interface ConexistasDocumentDataConexistaItem {
     /**
-     * Banner field in *Banners da Home → Banners*
+     * Foto field in *Conexistas → Conexista*
      *
      * - **Field Type**: Image
      * - **Placeholder**: *None*
-     * - **API ID Path**: banners_da_home.banners[].banner
+     * - **API ID Path**: conexistas.conexista[].foto
      * - **Documentation**: https://prismic.io/docs/core-concepts/image
      *
      */
-    banner: prismicT.ImageField<never>;
+    foto: prismicT.ImageField<never>;
     /**
-     * Link field in *Banners da Home → Banners*
-     *
-     * - **Field Type**: Link
-     * - **Placeholder**: *None*
-     * - **API ID Path**: banners_da_home.banners[].link
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    link: prismicT.LinkField;
-    /**
-     * Descrição field in *Banners da Home → Banners*
+     * Nome field in *Conexistas → Conexista*
      *
      * - **Field Type**: Text
      * - **Placeholder**: *None*
-     * - **API ID Path**: banners_da_home.banners[].descricao
+     * - **API ID Path**: conexistas.conexista[].nome
      * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
      */
-    descricao: prismicT.KeyTextField;
+    nome: prismicT.KeyTextField;
     /**
-     * Sub Descrição field in *Banners da Home → Banners*
+     * Curso field in *Conexistas → Conexista*
      *
      * - **Field Type**: Text
      * - **Placeholder**: *None*
-     * - **API ID Path**: banners_da_home.banners[].sub_descricao
+     * - **API ID Path**: conexistas.conexista[].curso
      * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
      */
-    sub_descricao: prismicT.KeyTextField;
+    curso: prismicT.KeyTextField;
+    /**
+     * Ativo field in *Conexistas → Conexista*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: conexistas.conexista[].ativo
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    ativo: prismicT.BooleanField;
+    /**
+     * Sobre field in *Conexistas → Conexista*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: conexistas.conexista[].sobre
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    sobre: prismicT.KeyTextField;
 }
 /**
- * Banners da Home document from Prismic
+ * Conexistas document from Prismic
  *
- * - **API ID**: `banners_da_home`
+ * - **API ID**: `conexistas`
  * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type BannersDaHomeDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<BannersDaHomeDocumentData>, "banners_da_home", Lang>;
-/** Content for Clientes documents */
-interface ClientesDocumentData {
-    /**
-     * Lista field in *Clientes*
-     *
-     * - **Field Type**: Group
-     * - **Placeholder**: *None*
-     * - **API ID Path**: clientes.lista[]
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/group
-     *
-     */
-    lista: prismicT.GroupField<Simplify<ClientesDocumentDataListaItem>>;
-}
-/**
- * Item in Clientes → Lista
- *
- */
-export interface ClientesDocumentDataListaItem {
-    /**
-     * Logo field in *Clientes → Lista*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: clientes.lista[].logo
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    logo: prismicT.ImageField<never>;
-    /**
-     * Titulo field in *Clientes → Lista*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: clientes.lista[].titulo
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    titulo: prismicT.KeyTextField;
-}
-/**
- * Clientes document from Prismic
- *
- * - **API ID**: `clientes`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type ClientesDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<ClientesDocumentData>, "clientes", Lang>;
+export type ConexistasDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<ConexistasDocumentData>, "conexistas", Lang>;
 /** Content for Contatos documents */
 interface ContatosDocumentData {
     /**
@@ -287,76 +248,6 @@ type ContatosDocumentDataSlicesSlice = never;
  * @typeParam Lang - Language API ID of the document.
  */
 export type ContatosDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<ContatosDocumentData>, "contatos", Lang>;
-/** Content for Endereços documents */
-interface EnderecosDocumentData {
-    /**
-     * Endereço field in *Endereços*
-     *
-     * - **Field Type**: Group
-     * - **Placeholder**: *None*
-     * - **API ID Path**: enderecos.endereco[]
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/group
-     *
-     */
-    endereco: prismicT.GroupField<Simplify<EnderecosDocumentDataEnderecoItem>>;
-}
-/**
- * Item in Endereços → Endereço
- *
- */
-export interface EnderecosDocumentDataEnderecoItem {
-    /**
-     * Nome field in *Endereços → Endereço*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: enderecos.endereco[].nome
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    nome: prismicT.KeyTextField;
-    /**
-     * Logradouro field in *Endereços → Endereço*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: enderecos.endereco[].logradouro
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    logradouro: prismicT.KeyTextField;
-    /**
-     * Bairro e Cidade field in *Endereços → Endereço*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: enderecos.endereco[].bairro_e_cidade
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    bairro_e_cidade: prismicT.KeyTextField;
-    /**
-     * CEP field in *Endereços → Endereço*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: enderecos.endereco[].cep
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    cep: prismicT.KeyTextField;
-}
-/**
- * Endereços document from Prismic
- *
- * - **API ID**: `enderecos`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type EnderecosDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<EnderecosDocumentData>, "enderecos", Lang>;
 /** Content for Equipe documents */
 interface EquipeDocumentData {
     /**
@@ -419,6 +310,28 @@ export interface EquipeDocumentDataListaItem {
 export type EquipeDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<EquipeDocumentData>, "equipe", Lang>;
 /** Content for Post documents */
 interface PostDocumentData {
+    /**
+     * Autor field in *Post*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: post.autor
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    autor: prismicT.KeyTextField;
+    /**
+     * Título field in *Post*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: post.titulo
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    titulo: prismicT.KeyTextField;
     /**
      * Thumbnail field in *Post*
      *
@@ -485,63 +398,6 @@ interface PostDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type PostDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<PostDocumentData>, "post", Lang>;
-/** Content for Serviço documents */
-interface ServicoDocumentData {
-    /**
-     * Título field in *Serviço*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: servico.titulo
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    titulo: prismicT.KeyTextField;
-    /**
-     * Resumo field in *Serviço*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: servico.resumo
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    resumo: prismicT.KeyTextField;
-    /**
-     * Descrição field in *Serviço*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: servico.descricao
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    descricao: prismicT.RichTextField;
-    /**
-     * Imagem field in *Serviço*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: servico.imagem
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    imagem: prismicT.ImageField<never>;
-}
-/**
- * Serviço document from Prismic
- *
- * - **API ID**: `servico`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type ServicoDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<ServicoDocumentData>, "servico", Lang>;
 /** Content for Sobre Nós documents */
 interface SobreNosDocumentData {
     /**
@@ -610,12 +466,12 @@ interface SobreNosDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SobreNosDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SobreNosDocumentData>, "sobre_nos", Lang>;
-export type AllDocumentTypes = BannersDaHomeDocument | ClientesDocument | ContatosDocument | EnderecosDocument | EquipeDocument | PostDocument | ServicoDocument | SobreNosDocument;
+export type AllDocumentTypes = ConexistasDocument | ContatosDocument | EquipeDocument | PostDocument | SobreNosDocument;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BannersDaHomeDocumentData, BannersDaHomeDocumentDataBannersItem, BannersDaHomeDocument, ClientesDocumentData, ClientesDocumentDataListaItem, ClientesDocument, ContatosDocumentData, ContatosDocumentDataSlicesSlice, ContatosDocument, EnderecosDocumentData, EnderecosDocumentDataEnderecoItem, EnderecosDocument, EquipeDocumentData, EquipeDocumentDataListaItem, EquipeDocument, PostDocumentData, PostDocument, ServicoDocumentData, ServicoDocument, SobreNosDocumentData, SobreNosDocument, AllDocumentTypes };
+        export type { ConexistasDocumentData, ConexistasDocumentDataConexistaItem, ConexistasDocument, ContatosDocumentData, ContatosDocumentDataSlicesSlice, ContatosDocument, EquipeDocumentData, EquipeDocumentDataListaItem, EquipeDocument, PostDocumentData, PostDocument, SobreNosDocumentData, SobreNosDocument, AllDocumentTypes };
     }
 }

@@ -1,15 +1,23 @@
 {
-  "id": "enderecos",
-  "label": "Endereços",
+  "id": "conexistas",
+  "label": "Conexistas",
   "repeatable": false,
   "status": true,
   "json": {
     "Main": {
-      "endereco": {
+      "conexista": {
         "type": "Group",
         "config": {
-          "label": "Endereço",
+          "label": "Conexista",
           "fields": {
+            "foto": {
+              "type": "Image",
+              "config": {
+                "label": "Foto",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
             "nome": {
               "type": "Text",
               "config": {
@@ -17,24 +25,26 @@
                 "placeholder": ""
               }
             },
-            "logradouro": {
+            "curso": {
               "type": "Text",
               "config": {
-                "label": "Logradouro",
+                "label": "Curso",
                 "placeholder": ""
               }
             },
-            "bairro_e_cidade": {
-              "type": "Text",
+            "ativo": {
+              "type": "Boolean",
               "config": {
-                "label": "Bairro e Cidade",
-                "placeholder": ""
+                "label": "Ativo",
+                "default_value": false,
+                "placeholder_true": "true",
+                "placeholder_false": "false"
               }
             },
-            "cep": {
+            "sobre": {
               "type": "Text",
               "config": {
-                "label": "CEP",
+                "label": "Sobre",
                 "placeholder": ""
               }
             }
