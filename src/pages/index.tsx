@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import { client } from '../services/prismicClient'
-import useSWR from 'swr'
 import { ResumePostSkeleton } from '../components/Partials/ResumePostSkeleton'
 import Layout from '../components/Layouts/Layout'
 import Link from 'next/link'
