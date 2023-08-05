@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        garamond: ['EB Garamond', 'serif'],
+      },
       colors: {
         brand: {
           gray: {

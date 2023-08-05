@@ -48,19 +48,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <GlobalContextProvider>
         <PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
           <Header />
-          <main className="min-h-[70vh]">
-            <Container>
-              <div className="grid grid-cols-6 mt-20">
-                <div className="col-span-4 border-r border-zinc-200 pr-5">
-                  <InnerHeader />
-                  <div className="mt-5">
-                    <Component {...pageProps} />
-                  </div>
-                </div>
-                <Sidebar />
-              </div>
-            </Container>
-          </main>
+          <Component {...pageProps} />
           <Footer />
           <BoxCookies />
           <Modals />

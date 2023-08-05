@@ -25,7 +25,7 @@ export default function ContentRichText({ data }: { data: [] | undefined }) {
           <h6 className="text-sm font-bold">{children}</h6>
         ),
         paragraph: ({ children }) => (
-          <p className="text-base mb-3">{children}</p>
+          <p className="text-base mb-3 font-garamond">{children}</p>
         ),
         preformatted: ({ children }) => <pre>{children}</pre>,
         strong: ({ children }) => (
