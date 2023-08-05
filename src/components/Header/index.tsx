@@ -29,7 +29,7 @@ export function Header() {
       <div className='px-10'>
         <div className="flex items-center justify-between">
           <Link href="/">
-            <strong className='text-xl '>PCSUFPA</strong>
+            <strong className='text-xl cursor-pointer'>PCSUFPA</strong>
           </Link>
           <div className="md:flex gap-5 items-center hidden">
             <NavLinks />

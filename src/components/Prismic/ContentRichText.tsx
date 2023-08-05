@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { PrismicRichText } from '@prismicio/react'
 
-export default function ContentRichText({ data }: { data: [] | undefined }) {
+export default function ContentRichText({ data }: any) {
   return (
     <PrismicRichText
       field={data}
@@ -25,11 +25,11 @@ export default function ContentRichText({ data }: { data: [] | undefined }) {
           <h6 className="text-sm font-bold">{children}</h6>
         ),
         paragraph: ({ children }) => (
-          <p className="text-base mb-3 font-garamond">{children}</p>
+          <p className="text-2xl md:text-xl mb-3 font-garamond text-justify">{children}</p>
         ),
         preformatted: ({ children }) => <pre>{children}</pre>,
         strong: ({ children }) => (
-          <strong className="font-semibold">{children}</strong>
+          <strong className="font-semibold text-2xl md:text-xl">{children}</strong>
         ),
         em: ({ children }) => <em>{children}</em>,
         listItem: ({ children }) => <li>{children}</li>,

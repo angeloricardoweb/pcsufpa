@@ -4,6 +4,7 @@ import useSWR from 'swr'
 import { ResumePostSkeleton } from '../components/Partials/ResumePostSkeleton'
 import Layout from '../components/Layouts/Layout'
 import Link from 'next/link'
+import Container from '../components/Partials/Container'
 const Home: NextPage = () => {
   const { data: posts, isLoading } = useSWR('post_all', () =>
     client.getAllByType('post')
@@ -13,13 +14,13 @@ const Home: NextPage = () => {
 
   if (isLoading)
     return (
-      <div>
+      <Layout>
         <ResumePostSkeleton />
         <ResumePostSkeleton />
         <ResumePostSkeleton />
         <ResumePostSkeleton />
         <ResumePostSkeleton />
-      </div>
+      </Layout>
     )
 
   return (
@@ -30,11 +31,11 @@ const Home: NextPage = () => {
             <div>
               <div className="grid grid-cols-6 gap-2 items-center">
                 <div className="col-span-4">
-                  <small>
+                  <small className='text-zinc-600'>
                     {post.data.autor} -{' '}
                     {new Intl.DateTimeFormat('pt-BR', {
                       dateStyle: 'medium',
-                    }).format(new Date(post.last_publication_date))}
+                    }).format(new Date(post.first_publication_date))}
                   </small>
                   <h2 className="text-2xl font-bold group-hover:text-blue-900 transition-all">
                     {post.data.titulo}
