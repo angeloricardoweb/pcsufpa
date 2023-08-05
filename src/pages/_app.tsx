@@ -12,10 +12,6 @@ import { MenuHamburguer } from '../components/Partials/MenuHamburguer'
 import { DefaultSeo } from 'next-seo'
 import 'swiper/css/bundle'
 import '../styles/index.scss'
-import { useEffect, useState } from 'react'
-import Container from '../components/Partials/Container'
-import { InnerHeader } from '../components/Partials/InnerHeader'
-import { Sidebar } from '../components/Partials/Sidebar'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (

@@ -4,7 +4,8 @@ import useSWR from 'swr'
 import Layout from '../components/Layouts/Layout'
 
 const Page: NextPage = () => {
-
+ 
+    // const data = await client.getSingle('conexistas')
 
   return (
     <Layout>
