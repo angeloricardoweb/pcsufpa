@@ -35,7 +35,7 @@ const Home: NextPage = () => {
                       dateStyle: 'medium',
                     }).format(new Date(post.first_publication_date))}
                   </small>
-                  <h2 className="text-2xl font-bold group-hover:text-blue-900 transition-all">
+                  <h2 className="text-2xl font-bold group-hover:text-brand-green-100 transition-all">
                     {post.data.titulo}
                   </h2>
                   <p className="font-light font-garamond">{post.data.resumo}</p>

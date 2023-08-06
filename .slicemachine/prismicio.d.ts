@@ -76,6 +76,16 @@ export interface ConexistasDocumentDataConexistaItem {
      *
      */
     sobre: prismicT.KeyTextField;
+    /**
+     * Cargo field in *Conexistas → Conexista*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: conexistas.conexista[].cargo
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    cargo: prismicT.KeyTextField;
 }
 /**
  * Conexistas document from Prismic
@@ -248,66 +258,6 @@ type ContatosDocumentDataSlicesSlice = never;
  * @typeParam Lang - Language API ID of the document.
  */
 export type ContatosDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<ContatosDocumentData>, "contatos", Lang>;
-/** Content for Equipe documents */
-interface EquipeDocumentData {
-    /**
-     * Lista field in *Equipe*
-     *
-     * - **Field Type**: Group
-     * - **Placeholder**: *None*
-     * - **API ID Path**: equipe.lista[]
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/group
-     *
-     */
-    lista: prismicT.GroupField<Simplify<EquipeDocumentDataListaItem>>;
-}
-/**
- * Item in Equipe → Lista
- *
- */
-export interface EquipeDocumentDataListaItem {
-    /**
-     * Foto field in *Equipe → Lista*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: equipe.lista[].foto
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    foto: prismicT.ImageField<never>;
-    /**
-     * Nome field in *Equipe → Lista*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: equipe.lista[].nome
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    nome: prismicT.KeyTextField;
-    /**
-     * Cargo field in *Equipe → Lista*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: equipe.lista[].cargo
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    cargo: prismicT.KeyTextField;
-}
-/**
- * Equipe document from Prismic
- *
- * - **API ID**: `equipe`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type EquipeDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<EquipeDocumentData>, "equipe", Lang>;
 /** Content for Post documents */
 interface PostDocumentData {
     /**
@@ -466,12 +416,12 @@ interface SobreNosDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SobreNosDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SobreNosDocumentData>, "sobre_nos", Lang>;
-export type AllDocumentTypes = ConexistasDocument | ContatosDocument | EquipeDocument | PostDocument | SobreNosDocument;
+export type AllDocumentTypes = ConexistasDocument | ContatosDocument | PostDocument | SobreNosDocument;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ConexistasDocumentData, ConexistasDocumentDataConexistaItem, ConexistasDocument, ContatosDocumentData, ContatosDocumentDataSlicesSlice, ContatosDocument, EquipeDocumentData, EquipeDocumentDataListaItem, EquipeDocument, PostDocumentData, PostDocument, SobreNosDocumentData, SobreNosDocument, AllDocumentTypes };
+        export type { ConexistasDocumentData, ConexistasDocumentDataConexistaItem, ConexistasDocument, ContatosDocumentData, ContatosDocumentDataSlicesSlice, ContatosDocument, PostDocumentData, PostDocument, SobreNosDocumentData, SobreNosDocument, AllDocumentTypes };
     }
 }

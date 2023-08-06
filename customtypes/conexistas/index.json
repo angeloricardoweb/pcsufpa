@@ -47,6 +47,13 @@
                 "label": "Sobre",
                 "placeholder": ""
               }
+            },
+            "cargo": {
+              "type": "Text",
+              "config": {
+                "label": "Cargo",
+                "placeholder": ""
+              }
             }
           }
         }

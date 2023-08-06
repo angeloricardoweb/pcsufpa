@@ -26,10 +26,15 @@ export function Header() {
     >
       {/* {y > 0 ? null : <TopBar />} */}
 
-      <div className='px-10'>
+      <div className="px-10">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <strong className='text-xl cursor-pointer'>PCSUFPA</strong>
+            <div className='flex items-center'>
+              <img src="/img/logotipo.png" alt="PCS UFPA" className="w-14 mr-2" />
+              <h1 className="text-xl cursor-pointer font-bold">
+                Programa Conexões de Saberes - UFPA
+              </h1>
+            </div>
           </Link>
           <div className="md:flex gap-5 items-center hidden">
             <NavLinks />

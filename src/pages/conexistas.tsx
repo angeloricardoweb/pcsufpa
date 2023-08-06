@@ -44,10 +44,10 @@ const Page: NextPage = () => {
 
 function Conexista(conexista: ConexistasDocument['data']['conexista'][0]) {
   return (
-    <div className="border-b pb-2 mb-2">
+    <div className="border-b py-4 mb-2">
       <div className="flex items-center gap-5 flex-col md:flex-row">
         <div
-          className="bg-cover rounded-full aspect-square w-40 bg-center"
+          className="bg-cover rounded-full aspect-square w-28 bg-center"
           style={{ backgroundImage: `url(${conexista?.foto.url})` }}
         />
         <div className="flex flex-col items-center md:items-start">
@@ -62,6 +62,9 @@ function Conexista(conexista: ConexistasDocument['data']['conexista'][0]) {
                 className="text-xl text-zinc-500"
               />
               <span className="text-sm text-zinc-500">{conexista?.curso}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              - <span className="text-sm text-zinc-500">Ex-{conexista?.cargo}</span>
             </div>
           </div>
           <p className="text-sm text-zinc-700 text-center md:text-start">

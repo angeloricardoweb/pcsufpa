@@ -34,7 +34,7 @@ export function InnerHeader() {
       {navLinks.map((link) => (
         <Link href={link.route} key={link.name}>
           <span
-            className={`p-3 font-light cursor-pointer text-sm ${
+            className={`p-3 font-light cursor-pointer text-sm hover:text-brand-green-100 ${
               router.asPath === link.route ? 'active-link' : ''
             }`}
           >

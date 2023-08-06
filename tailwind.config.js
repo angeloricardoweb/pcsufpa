@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const { join } = require('path');
+const { join } = require('path')
 
 module.exports = {
   content: [
@@ -14,19 +14,22 @@ module.exports = {
       colors: {
         brand: {
           gray: {
-            50: "#949494",
+            50: '#949494',
           },
           green: {
-            100: "#C5E884"
+            100: '#008B44',
           },
           blue: {
-            50: '#F6F7FF',
+            50: '#017CBF',
           },
           purple: {
-            600: '#5F69E2'
+            600: '#5F69E2',
           },
           yellow: {
-            100: "#DACE00"
+            100: '#DACE00',
+          },
+          orange: {
+            500: '#F58634',
           },
         },
       },
