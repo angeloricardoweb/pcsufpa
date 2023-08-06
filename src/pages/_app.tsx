@@ -12,10 +12,13 @@ import { MenuHamburguer } from '../components/Partials/MenuHamburguer'
 import { DefaultSeo } from 'next-seo'
 import 'swiper/css/bundle'
 import '../styles/index.scss'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
+  const queryClient = new QueryClient()
+  
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <DefaultSeo
         title="PCS UFPA"
         description="___SiteDescription___    "
@@ -52,6 +55,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         </PrismicProvider>
       </GlobalContextProvider>
       <MenuHamburguer />
-    </>
+    </QueryClientProvider>
   )
 }

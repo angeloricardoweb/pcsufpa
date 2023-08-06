@@ -1,11 +1,13 @@
 import type { NextPage } from 'next'
 import { client } from '../services/prismicClient'
-import useSWR from 'swr'
 import Layout from '../components/Layouts/Layout'
+import { useQuery } from 'react-query'
 
 const Page: NextPage = () => {
- 
-    // const data = await client.getSingle('conexistas')
+  const { data } = useQuery('getConexistas', async () => {
+    await client.getSingle('conexistas')
+  })
+  console.log(data)
 
   return (
     <Layout>

@@ -3,13 +3,12 @@ import { client } from '../services/prismicClient'
 import { ResumePostSkeleton } from '../components/Partials/ResumePostSkeleton'
 import Layout from '../components/Layouts/Layout'
 import Link from 'next/link'
-import Container from '../components/Partials/Container'
+import { useQuery } from 'react-query'
+
 const Home: NextPage = () => {
-  const { data: posts, isLoading } = useSWR('post_all', () =>
+  const { data: posts, isLoading } = useQuery('post_all', () =>
     client.getAllByType('post')
   )
-
-  console.log(posts)
 
   if (isLoading)
     return (
