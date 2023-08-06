@@ -30,7 +30,7 @@ export const navLinks = [
 export function InnerHeader() {
   const router = useRouter()
   return (
-    <header className="flex border-b border-zinc-200">
+    <header className="flex border-b border-zinc-200 flex-wrap">
       {navLinks.map((link) => (
         <Link href={link.route} key={link.name}>
           <span
