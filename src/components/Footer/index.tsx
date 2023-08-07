@@ -12,24 +12,12 @@ export default function Footer() {
         <div className="flex justify-between flex-wrap gap-10">
           <div className="w-[320px]">
             <img src="/img/logo.png" alt="Logo" />
-
-            <small className="mt-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-              autem adipisci magnam rerum quae distinctio sequi eius ipsam
-              delectus fugiat harum ratione, dignissimos qui soluta
-              reprehenderit et laboriosam consequuntur alias!
-            </small>
           </div>
 
           <div className="flex gap-10 flex-wrap">
             <div className="flex flex-col w-[320px]">
-              <strong>Encontre nosso escritório</strong>
-              <small>
-                Rodovia Augusto Montenegro, 4300, Parque Office, Torre Norte,
-                Sala 614N Belém - Pará
-              </small>
-              <strong className="mt-4">Horário de atendimento</strong>
-              <small>Segunda à sexta, de 8h às 17h</small>
+              <strong>Encontre-nos</strong>
+              <small>Av. Perimetral 1400, Belém, PA, 66077-530</small>
             </div>
 
             <div className="flex flex-col gap-5 w-[80px]">
