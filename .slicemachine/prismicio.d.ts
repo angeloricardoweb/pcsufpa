@@ -6,6 +6,67 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for Acervo documents */
+interface AcervoDocumentData {
+    /**
+     * Descrição field in *Acervo*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: acervo.descricao
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    descricao: prismicT.KeyTextField;
+    /**
+     * Item field in *Acervo*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: acervo.item[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    item: prismicT.GroupField<Simplify<AcervoDocumentDataItemItem>>;
+}
+/**
+ * Item in Acervo → Item
+ *
+ */
+export interface AcervoDocumentDataItemItem {
+    /**
+     * Nome field in *Acervo → Item*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: acervo.item[].nome
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    nome: prismicT.KeyTextField;
+    /**
+     * Link field in *Acervo → Item*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: acervo.item[].link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    link: prismicT.KeyTextField;
+}
+/**
+ * Acervo document from Prismic
+ *
+ * - **API ID**: `acervo`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AcervoDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<AcervoDocumentData>, "acervo", Lang>;
 /** Content for Conexistas documents */
 interface ConexistasDocumentData {
     /**
@@ -416,12 +477,12 @@ interface SobreNosDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SobreNosDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SobreNosDocumentData>, "sobre_nos", Lang>;
-export type AllDocumentTypes = ConexistasDocument | ContatosDocument | PostDocument | SobreNosDocument;
+export type AllDocumentTypes = AcervoDocument | ConexistasDocument | ContatosDocument | PostDocument | SobreNosDocument;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ConexistasDocumentData, ConexistasDocumentDataConexistaItem, ConexistasDocument, ContatosDocumentData, ContatosDocumentDataSlicesSlice, ContatosDocument, PostDocumentData, PostDocument, SobreNosDocumentData, SobreNosDocument, AllDocumentTypes };
+        export type { AcervoDocumentData, AcervoDocumentDataItemItem, AcervoDocument, ConexistasDocumentData, ConexistasDocumentDataConexistaItem, ConexistasDocument, ContatosDocumentData, ContatosDocumentDataSlicesSlice, ContatosDocument, PostDocumentData, PostDocument, SobreNosDocumentData, SobreNosDocument, AllDocumentTypes };
     }
 }

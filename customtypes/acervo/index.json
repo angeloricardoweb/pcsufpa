@@ -1,0 +1,39 @@
+{
+  "id": "acervo",
+  "label": "Acervo",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "descricao": {
+        "type": "Text",
+        "config": {
+          "label": "Descrição",
+          "placeholder": ""
+        }
+      },
+      "item": {
+        "type": "Group",
+        "config": {
+          "label": "Item",
+          "fields": {
+            "nome": {
+              "type": "Text",
+              "config": {
+                "label": "Nome",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Text",
+              "config": {
+                "label": "Link",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

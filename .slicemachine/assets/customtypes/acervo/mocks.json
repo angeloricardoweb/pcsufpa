@@ -1,0 +1,33 @@
+{
+  "descricao": {
+    "__TYPE__": "FieldContent",
+    "value": "beautiful",
+    "type": "Text"
+  },
+  "item": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "nome",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "including",
+              "type": "Text"
+            }
+          ],
+          [
+            "link",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "street",
+              "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
+  }
+}
