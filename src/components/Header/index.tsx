@@ -29,8 +29,12 @@ export function Header() {
       <div className="px-10">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <div className='flex items-center'>
-              <img src="/img/logotipo.png" alt="PCS UFPA" className="w-14 mr-2" />
+            <div className="flex items-center">
+              <img
+                src="/img/logotipo.png"
+                alt="PCS UFPA"
+                className="w-14 mr-2"
+              />
               <h1 className="text-xl cursor-pointer font-bold">
                 Programa Conexões de Saberes - UFPA
               </h1>
@@ -43,7 +47,7 @@ export function Header() {
             className="md:hidden"
             onClick={() => setShowMenuHamburguer(true)}
           >
-            <Icon icon="mdi:menu" className="text-white text-3xl" />
+            <Icon icon="mdi:menu" className="text-3xl" />
           </div>
         </div>
       </div>
