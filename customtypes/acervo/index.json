@@ -1,0 +1,47 @@
+{
+  "id": "acervo",
+  "label": "Acervo",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "lista": {
+        "type": "Group",
+        "config": {
+          "label": "Lista",
+          "fields": {
+            "imagem": {
+              "type": "Image",
+              "config": {
+                "label": "Imagem",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "titulo": {
+              "type": "Text",
+              "config": {
+                "label": "Título",
+                "placeholder": ""
+              }
+            },
+            "descricao": {
+              "type": "Text",
+              "config": {
+                "label": "Descrição",
+                "placeholder": ""
+              }
+            },
+            "link_para_baixar_ou_visualizar": {
+              "type": "Text",
+              "config": {
+                "label": "Link para Baixar ou Visualizar",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

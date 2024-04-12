@@ -12,6 +12,20 @@
           "placeholder": ""
         }
       },
+      "categoria": {
+        "type": "Select",
+        "config": {
+          "label": "Categoria",
+          "placeholder": "",
+          "options": [
+            "Notícia",
+            "Utilidade",
+            "Natureza",
+            "População",
+            "Evento"
+          ]
+        }
+      },
       "titulo": {
         "type": "Text",
         "config": {
@@ -52,19 +66,6 @@
           "placeholder": "",
           "allowTargetBlank": true,
           "multi": "paragraph,heading2,heading3,strong,em,hyperlink,image,list-item,o-list-item,embed,heading4"
-        }
-      },
-      "categoria": {
-        "type": "Select",
-        "config": {
-          "label": "Categoria",
-          "placeholder": "",
-          "options": [
-            "Notícia",
-            "Utilidade",
-            "Natureza",
-            "População"
-          ]
         }
       }
     }

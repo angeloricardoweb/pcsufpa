@@ -7,7 +7,7 @@ import { Copyright } from './Copyright'
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className='mt-10'>
       <Container>
         <div className="flex justify-between flex-wrap gap-10">
           <div className="w-[320px]">

@@ -6,6 +6,76 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for Acervo documents */
+interface AcervoDocumentData {
+    /**
+     * Lista field in *Acervo*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: acervo.lista[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    lista: prismicT.GroupField<Simplify<AcervoDocumentDataListaItem>>;
+}
+/**
+ * Item in Acervo → Lista
+ *
+ */
+export interface AcervoDocumentDataListaItem {
+    /**
+     * Imagem field in *Acervo → Lista*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: acervo.lista[].imagem
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    imagem: prismicT.ImageField<never>;
+    /**
+     * Título field in *Acervo → Lista*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: acervo.lista[].titulo
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    titulo: prismicT.KeyTextField;
+    /**
+     * Descrição field in *Acervo → Lista*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: acervo.lista[].descricao
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    descricao: prismicT.KeyTextField;
+    /**
+     * Link para Baixar ou Visualizar field in *Acervo → Lista*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: acervo.lista[].link_para_baixar_ou_visualizar
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    link_para_baixar_ou_visualizar: prismicT.KeyTextField;
+}
+/**
+ * Acervo document from Prismic
+ *
+ * - **API ID**: `acervo`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AcervoDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<AcervoDocumentData>, "acervo", Lang>;
 /** Content for Conexistas documents */
 interface ConexistasDocumentData {
     /**
@@ -248,6 +318,79 @@ type ContatosDocumentDataSlicesSlice = never;
  * @typeParam Lang - Language API ID of the document.
  */
 export type ContatosDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<ContatosDocumentData>, "contatos", Lang>;
+/** Content for Eixo documents */
+interface EixoDocumentData {
+    /**
+     * Título field in *Eixo*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: eixo.titulo
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    titulo: prismicT.KeyTextField;
+    /**
+     * Galeria field in *Eixo*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: eixo.galeria[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    galeria: prismicT.GroupField<Simplify<EixoDocumentDataGaleriaItem>>;
+    /**
+     * Conteúdo field in *Eixo*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: eixo.conteudo
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    conteudo: prismicT.RichTextField;
+    /**
+     * Resumo field in *Eixo*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: eixo.resumo
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    resumo: prismicT.KeyTextField;
+}
+/**
+ * Item in Eixo → Galeria
+ *
+ */
+export interface EixoDocumentDataGaleriaItem {
+    /**
+     * Foto field in *Eixo → Galeria*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: eixo.galeria[].foto
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    foto: prismicT.ImageField<never>;
+}
+/**
+ * Eixo document from Prismic
+ *
+ * - **API ID**: `eixo`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type EixoDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<EixoDocumentData>, "eixo", Lang>;
 /** Content for Equipe documents */
 interface EquipeDocumentData {
     /**
@@ -322,6 +465,17 @@ interface PostDocumentData {
      */
     autor: prismicT.KeyTextField;
     /**
+     * Categoria field in *Post*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **API ID Path**: post.categoria
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    categoria: prismicT.SelectField<"Notícia" | "Utilidade" | "Natureza" | "População" | "Evento">;
+    /**
      * Título field in *Post*
      *
      * - **Field Type**: Text
@@ -376,17 +530,6 @@ interface PostDocumentData {
      *
      */
     conteudo: prismicT.RichTextField;
-    /**
-     * Categoria field in *Post*
-     *
-     * - **Field Type**: Select
-     * - **Placeholder**: *None*
-     * - **API ID Path**: post.categoria
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/select
-     *
-     */
-    categoria: prismicT.SelectField<"Notícia" | "Utilidade" | "Natureza" | "População">;
 }
 /**
  * Post document from Prismic
@@ -466,12 +609,12 @@ interface SobreNosDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SobreNosDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SobreNosDocumentData>, "sobre_nos", Lang>;
-export type AllDocumentTypes = ConexistasDocument | ContatosDocument | EquipeDocument | PostDocument | SobreNosDocument;
+export type AllDocumentTypes = AcervoDocument | ConexistasDocument | ContatosDocument | EixoDocument | EquipeDocument | PostDocument | SobreNosDocument;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ConexistasDocumentData, ConexistasDocumentDataConexistaItem, ConexistasDocument, ContatosDocumentData, ContatosDocumentDataSlicesSlice, ContatosDocument, EquipeDocumentData, EquipeDocumentDataListaItem, EquipeDocument, PostDocumentData, PostDocument, SobreNosDocumentData, SobreNosDocument, AllDocumentTypes };
+        export type { AcervoDocumentData, AcervoDocumentDataListaItem, AcervoDocument, ConexistasDocumentData, ConexistasDocumentDataConexistaItem, ConexistasDocument, ContatosDocumentData, ContatosDocumentDataSlicesSlice, ContatosDocument, EixoDocumentData, EixoDocumentDataGaleriaItem, EixoDocument, EquipeDocumentData, EquipeDocumentDataListaItem, EquipeDocument, PostDocumentData, PostDocument, SobreNosDocumentData, SobreNosDocument, AllDocumentTypes };
     }
 }

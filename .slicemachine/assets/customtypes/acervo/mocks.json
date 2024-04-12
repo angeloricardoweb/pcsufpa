@@ -1,0 +1,60 @@
+{
+  "lista": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "imagem",
+            {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e",
+                "width": 4480,
+                "height": 4480
+              },
+              "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e",
+              "width": 4480,
+              "height": 4480,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            }
+          ],
+          [
+            "titulo",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "pilot",
+              "type": "Text"
+            }
+          ],
+          [
+            "descricao",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "perfectly",
+              "type": "Text"
+            }
+          ],
+          [
+            "link_para_baixar_ou_visualizar",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "fat",
+              "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
+  }
+}

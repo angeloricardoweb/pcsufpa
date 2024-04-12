@@ -13,15 +13,14 @@ module.exports = {
       },
       colors: {
         brand: {
+          orange: '#F04623',
           gray: {
             50: "#949494",
           },
           green: {
             100: "#C5E884"
           },
-          blue: {
-            50: '#F6F7FF',
-          },
+          blue: '#50ADE6',
           purple: {
             600: '#5F69E2'
           },

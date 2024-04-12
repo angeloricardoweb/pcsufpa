@@ -20,16 +20,18 @@ export function Header() {
 
   return (
     <header
-      className={`fixed z-50 w-full shadow-xl backdrop-blur transition-all top-0 py-3 ${
-        y > 0 ? 'bg-white/70' : 'bg-zinc-100'
-      } `}
+      className={`fixed z-50 w-full shadow-xl backdrop-blur transition-all top-0 py-3 ${y > 0 ? 'bg-white/70' : 'bg-zinc-100'
+        } `}
     >
       {/* {y > 0 ? null : <TopBar />} */}
 
       <div className='px-10'>
         <div className="flex items-center justify-between">
           <Link href="/">
-            <strong className='text-xl cursor-pointer'>PCSUFPA</strong>
+            <div className='flex items-center gap-2 w-fit'>
+              <img src="/img/logo.png" alt="logo" className='w-10 h-10' />
+              <strong className='text-xl cursor-pointer'>PET Interdisciplinar Conexões de Saberes</strong>
+            </div>
           </Link>
           <div className="md:flex gap-5 items-center hidden">
             <NavLinks />
